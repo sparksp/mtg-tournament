@@ -67,6 +67,13 @@
 
                         return function () {
                             var timeRemaining = endTime - now();
+
+                            if (timeRemaining < 0) {
+                                addLandsElm.innerHTML = "";
+                                timeElm.innerHTML = "Stop Building!"
+                                return;
+                            }
+
                             timeElm.innerHTML = formatTime(timeRemaining);
 
                             if (timeRemaining < FIVE_MINUTES) {
