@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://use.fontawesome.com/1048edd5be.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="tournament.css">
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="pure-g">
+        <div class="pure-u-1 l-box">
+            <h1>Draft Tournament</h1>
+
+            <h2>Deck Construction</h2>
+
+            <p style="text-align: center">Time remaining:</p>
+
+            <p style="font-size: 20em; margin: 0; text-align: center" id="countdown"></p>
+            <p style="font-size: 10em; margin: 0; text-align: center" id="add-lands"></p>
+            <script>
+                (function (countdownId, addLandsId) {
+                    "use strict";
+
+                    const ONE_MINUTE = 60000;
+                    const FIVE_MINUTES = 5 * ONE_MINUTE;
+                    const OVER_FIVE_MINUTES = 5.1 * ONE_MINUTE;
+
+                    var pad = function (digit) {
+                        if (digit < 10) {
+                            return "0" + digit;
+                        }
+                        return digit;
+                    }
+
+                    var formatTime = function (milliseconds) {
+                        var seconds = parseInt(milliseconds / 1000, 10);
+                        var minutes = parseInt(seconds / 60, 10);
+                        seconds = seconds % 60;
+
+                        return minutes + ":" + pad(seconds);
+                    }
+
+                    var now = function () {
+                        return new Date();
+                    }
+
+                    var updateTime = (function () {
+                        var countdown = document.getElementById(countdownId);
+                        var timeElm = document.createElement("span");
+                        countdown.appendChild(timeElm);
+                        var addLandsElm = document.getElementById(addLandsId);
+
+                        var endTime = new Date(now().getTime() + OVER_FIVE_MINUTES);
+
+                        return function () {
+                            var timeRemaining = endTime - now();
+                            timeElm.innerHTML = formatTime(timeRemaining);
+
+                            if (timeRemaining < FIVE_MINUTES) {
+                                timeElm.style = "color: red";
+                                addLandsElm.innerHTML = "Add Lands!";
+                            }
+                        }
+                    })();
+
+                    setTimeout(updateTime, 1); // async
+                    setInterval(updateTime, 100);
+                })("countdown", "add-lands");
+            </script>
+
+            <p><a class="pure-button pure-button-primary" href="round-seating.html"><i class="fa fa-play"></i> First Round Seating</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

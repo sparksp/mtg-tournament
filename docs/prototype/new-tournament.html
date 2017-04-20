@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://use.fontawesome.com/1048edd5be.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="tournament.css">
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="pure-g">
+        <div class="pure-u-1 l-box">
+            <h1>New Tournament</h1>
+            <h2>Settings</h2>
+            <form action="new-tournament-players.html" method="GET" class="pure-form pure-form-aligned">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="mtg-format">Format:</label>
+                        <select id="mtg-format" name="format" required>
+                            <option value="constructed">Constructed</option>
+                            <option value="draft">Draft</option>
+                            <option value="sealed">Sealed</option>
+                        </select>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="mtg-tournament-type">Tournament Type:</label>
+                        <select id="mtg-tournament-type" name="type" required>
+                            <option value="round-robin">Round Robin</option>
+                            <option value="single-elimination">Single Elimination</option>
+                            <option value="swiss" selected>Swiss</option>
+                        </select>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="mtg-construction-time">Build Time Limit:</label>
+                        <select id="mtg-construction-time" name="construction-time" required>
+                            <option value="600">10 minutes</option>
+                            <option value="900">15 minutes</option>
+                            <option value="1200">20 minutes</option>
+                            <option value="1500">25 minutes</option>
+                            <option value="1800">30 minutes</option>
+                            <option value="2100">35 minutes</option>
+                            <option value="2400">40 minutes</option>
+                            <option value="2700">45 minutes</option>
+                            <option value="3000">50 minutes</option>
+                            <option value="3300">55 minutes</option>
+                            <option value="3600">60 minutes</option>
+                            <option value="-1" selected>Unlimited</option>
+                        </select>
+                        <span class="pure-form-message-inline">Draft / Sealed only.</span>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="mtg-round-time">Round Time Limit:</label>
+                        <select id="mtg-round-time" name="round-time" required>
+                            <option value="1800">30 minutes</option>
+                            <option value="2100">35 minutes</option>
+                            <option value="2400">40 minutes</option>
+                            <option value="2700">45 minutes</option>
+                            <option value="3000" selected>50 minutes</option>
+                            <option value="3300">55 minutes</option>
+                            <option value="3600">60 minutes</option>
+                            <option value="-1">Unlimited</option>
+                        </select>
+                    </div>
+
+                    <div class="pure-controls">
+                        <button type="submit" class="pure-button pure-button-primary"><i class="fa fa-users"></i> Enter Players</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
