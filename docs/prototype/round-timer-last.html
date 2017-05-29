@@ -24,8 +24,7 @@
         <div class="pure-u-1 l-box">
             <h1>Draft Tournament</h1>
 
-            <h2>Deck Construction</h2>
-
+            <h2>Round 3</h2>
             <h3>Time Remaining</h3>
 
             <p class="countdown" id="countdown"></p>
@@ -102,10 +101,13 @@
 
                     timer = setInterval(updateTime, 100);
                     setTimeout(updateTime, 1); // async
-                })("countdown", "countdown-information", "Add Lands!", "Stop Building!", "");
+                })("countdown", "countdown-information", "", "Take 5 additional turns", "TURNS");
             </script>
 
-            <p><a class="pure-button button-primary" href="round-seating-first.html"><i class="fa fa-play" aria-hidden="true"></i> First Round Seating</a></p>
+            <p>
+                <a class="pure-button button-secondary" href="enter-score.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Enter Score</a>
+                <a class="pure-button button-primary" href="tournament-scores.html"><i class="fa fa-check" aria-hidden="true"></i> Finish Tournament</a>
+            </p>
         </div>
     </div>
 </body>

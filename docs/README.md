@@ -60,7 +60,14 @@ Click "Generate Pairings":  Generate Round Robin pairings.  Table numbers are as
 
 ### Single Elimination
 Click "Generate Pairings":  In the Second round, the winners of the 1st/8th place and 4th/5th place matches play each other, and the winners of the 2nd/7th place and 3rd/6th place matches play each other. The remaining players play in the last round of the playoff.  Table numbers are assigned randomly.
- 
+
+## Pairing Information
+1. Table Number
+2. Player Name / W-L-D
+3. Opponent Name / W-L-D
+
+Sorted alphabetically by "Player Name".  Bonus feature: Option to organise by table number (avoiding duplicates).
+
 ## Matches
 Click "Start Round 1": Display countdown timer.  Change colour of timer at the 5 minute mark.  Once timer expires, display "TURNS:  Take 5 additional turns."
 

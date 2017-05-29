@@ -1,3 +1,53 @@
 .l-box {
     padding: 1em;
 }
+.button-primary, .button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button-primary {
+    background: rgb(0, 120, 231);
+}
+.button-secondary {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.countdown {
+    font-size: 20em;
+    margin: 0;
+}
+.countdown-information {
+    font-size: 7.5em;
+    margin: 0;
+}
+
+.table-players, .table-seating {
+    width: 100%;
+}
+.table-players .position,
+.table-players .seed,
+.table-players .actions,
+.table-seating .seat,
+.table-seating .seed,
+.table-seating .action-drop,
+.table-pairings .pod,
+.table-pairings .wins,
+.table-pairings .loses,
+.table-pairings .draws {
+    text-align: center;
+}
+.table-pairings .opponent {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.pure-table th, .table-pairings th.separator {
+    border-color: rgb(50, 50, 50);
+}
+.pure-table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.table-players .position, .table-players .seed, .table-players .actions, .table-players .action-edit, .table-players .action-remove,
+.table-seating .seat, .table-seating .seed, .table-seating .action-drop {
+    width: 1%;
+}
