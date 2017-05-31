@@ -13,6 +13,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="tournament.css">
+    <script src="countdown.js"></script>
 </head>
 
 <body>
@@ -30,83 +31,11 @@
             <p class="countdown" id="countdown"></p>
             <p class="countdown-information" id="countdown-information"></p>
             <script>
-                (function (countdownId, informationId, lateInformation, finalInformation, finalTime) {
-                    "use strict";
-
-                    const ONE_MINUTE = 60000;
-                    const FIVE_MINUTES = 5 * ONE_MINUTE;
-                    const OVER_FIVE_MINUTES = 5.1 * ONE_MINUTE;
-
-                    var pad = function (digit) {
-                        if (digit < 10) {
-                            return "0" + digit;
-                        }
-                        return digit;
-                    }
-
-                    var formatTime = function (milliseconds) {
-                        var seconds = parseInt(milliseconds / 1000, 10);
-                        var minutes = parseInt(seconds / 60, 10);
-                        seconds = seconds % 60;
-
-                        return minutes + ":" + pad(seconds);
-                    }
-
-                    var now = function () {
-                        return new Date();
-                    }
-
-                    var setText = function (elm, text) {
-                        if (elm.innerText != text) {
-                            elm.innerText = text;
-                        }
-                    }
-
-                    var timer = null;
-                    var stopTimer = function () {
-                        if (timer != null) {
-                            clearInterval(timer);
-                        }
-                        timer = null;
-                    }
-
-                    var updateTime = (function () {
-                        var countdown = document.getElementById(countdownId);
-                        var timeElm = document.createElement("span");
-                        countdown.appendChild(timeElm);
-                        var informationElm = document.getElementById(informationId);
-
-                        var endTime = new Date(now().getTime() + OVER_FIVE_MINUTES);
-
-                        return function () {
-                            var timeRemaining = endTime - now();
-                            var timeText = formatTime(timeRemaining);
-                            var informationText = "";
-
-                            if (timeRemaining < FIVE_MINUTES) {
-                                timeElm.style = "color: red";
-                                informationText = lateInformation;
-                            }
-
-                            if (timeRemaining <= 0) {
-                                timeText = finalTime;
-                                informationText = finalInformation;
-                                stopTimer();
-                            }
-
-                            setText(timeElm, timeText);
-                            setText(informationElm, informationText);
-                        }
-                    })();
-
-                    timer = setInterval(updateTime, 100);
-                    setTimeout(updateTime, 1); // async
-                })("countdown", "countdown-information", "", "Take 5 additional turns", "TURNS");
+                countdown("countdown", "countdown-information", "", "Take 5 additional turns", "TURNS");
             </script>
 
             <p>
-                <a class="pure-button button-secondary" href="enter-score.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Enter Score</a>
-                <a class="pure-button button-primary" href="round-seating-last.html"><i class="fa fa-check" aria-hidden="true"></i> Finish Round</a>
+                <a class="pure-button button-secondary" href="round-scores-first.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Enter Scores</a>
             </p>
         </div>
     </div>

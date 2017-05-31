@@ -22,6 +22,15 @@
     margin: 0;
 }
 
+.pure-form input.input-score {
+    border-radius: 0;
+    border-width: 0 0 1px 0;
+    box-shadow: none;
+    padding: 0;
+    text-align: center;
+    width: 1em;
+}
+
 .table-players, .table-seating {
     width: 100%;
 }

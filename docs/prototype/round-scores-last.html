@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://use.fontawesome.com/1048edd5be.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="tournament.css">
+    <script src="countdown.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="pure-g">
+        <div class="pure-u-1 l-box">
+            <h1>Draft Tournament</h1>
+
+            <h2>Round 3</h2>
+            <p>
+                <i class="fa fa-clock-o" aria-hidden="true"></i><strong class="sr-only">Time Remaining:</strong>
+                <span id="countdown"></span>
+                <strong id="countdown-information"></strong>
+            </p>
+            <script>
+                countdown("countdown", "countdown-information", "", "TURNS", "0:00");
+            </script>
+
+            <h3>Scores</h3>
+            <form action="" method="GET" class="pure-form">
+                <table class="pure-table pure-table-horizontal table-pairings">
+                    <thead>
+                        <tr>
+                            <th class="pod"><i class="fa fa-list-ol" aria-hidden="true"></i><span class="sr-only">Pod</i></th>
+                            <th class="player-name">Player A</th>
+                            <th class="opponent player-name">Player B</th>
+                            <th class="wins"><abbr title="Wins">W</abbr></th>
+                            <th class="loses"><abbr title="Loses">L</abbr></th>
+                            <th class="draws"><abbr title="Draws">D</abbr></th>
+                            <th class="complete"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Complete</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pod">1</td>
+                            <td class="player-name">Beaker</td>
+                            <td class="opponent player-name">Chris</td>
+                            <td class="wins"><input type="text" class="input-score" maxlength="1" value="2"></td>
+                            <td class="loses"><input type="text" class="input-score" maxlength="1" value="0"></td>
+                            <td class="draws"><input type="text" class="input-score" maxlength="1" value="0"></td>
+                            <td class="complete"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr>
+                            <td class="pod">2</td>
+                            <td class="player-name">Driggle</td>
+                            <td class="opponent player-name">Rochi</td>
+                            <td class="wins"><input type="text" class="input-score" maxlength="1" value=""></td>
+                            <td class="loses"><input type="text" class="input-score" maxlength="1" value=""></td>
+                            <td class="draws"><input type="text" class="input-score" maxlength="1" value=""></td>
+                            <td class="complete"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td class="pod">3</td>
+                            <td class="player-name">George</td>
+                            <td class="opponent player-name">Monkey</td>
+                            <td class="wins"><input type="text" class="input-score" maxlength="1" value="2"></td>
+                            <td class="loses"><input type="text" class="input-score" maxlength="1" value="1"></td>
+                            <td class="draws"><input type="text" class="input-score" maxlength="1" value="0"></td>
+                            <td class="complete"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr>
+                            <td class="pod">4</td>
+                            <td class="player-name">Rob</td>
+                            <td class="opponent player-name">Slightly</td>
+                            <td class="wins"><input type="text" class="input-score" maxlength="1" value="0"></td>
+                            <td class="loses"><input type="text" class="input-score" maxlength="1" value="1"></td>
+                            <td class="draws"><input type="text" class="input-score" maxlength="1" value="1"></td>
+                            <td class="complete"><input type="checkbox" checked></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <button class="pure-button button-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Update Scores</button>
+                    <a href="tournament-scores.html" class="pure-button button-secondary"><i class="fa fa-check" aria-hidden="true"></i> Finish Tournament</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
